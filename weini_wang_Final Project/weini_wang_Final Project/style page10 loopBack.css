@@ -1,27 +1,10 @@
 body {
-    font-family: "Roboto Flex", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-variation-settings:
-        "slnt" 0,
-        "wdth" 100,
-        "GRAD" 0,
-        "XOPQ" 96,
-        "XTRA" 468,
-        "YOPQ" 79,
-        "YTAS" 750,
-        "YTDE" -203,
-        "YTFI" 738,
-        "YTLC" 514,
-        "YTUC" 712;
     overflow: hidden;
-    min-height: 100vh;
-    background: #050509;
-    color: #f5f5f5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #0d0d0d;
+    color: #e6e6e6;
+    font-family: "Syne Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .wrapper {
@@ -62,10 +45,12 @@ a {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+
     background: transparent;
     border: none;
     outline: none;
     box-shadow: none;
+
     padding: 0;
     margin: 0;
     cursor: pointer;
@@ -171,93 +156,41 @@ a {
     display: block;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.archive-grid {
-    width: 90vw;
-    max-width: 600px;
-    margin: 0 auto;
+.link-grid {
+    margin-top: 250px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.archive-item {
-    position: relative;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background: #000;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    cursor: pointer;
-}
-
-.archive-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity .35s ease, transform .35s ease;
-    transform: scale(1.1);
-    filter: grayscale(100%) contrast(130%) saturate(0%);
-}
-
-.archive-item .error {
-    position: absolute;
-    inset: 0;
-    display: flex;
+    text-align: center;
+    grid-template-columns: repeat(3, 400px);
+    gap: 35px;
     justify-content: center;
+    grid-auto-rows: 150px;
+
+}
+
+.fake-link {
+    display: flex;
     align-items: center;
-    color: #fff;
-    font-size: .9rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    background: rgba(0, 0, 0, 0.85);
-    transition: opacity .3s ease;
-    opacity: 1;
+    justify-content: center;
+    border: 1px solid #555;
+    color: #d9d9d9;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: 0.2s;
+    position: relative;
+    border-radius: 12px;
 }
 
-.archive-item:hover img {
-    opacity: 1;
-    transform: scale(1);
-    filter: none;
+.fake-link:hover {
+    border-color: #fff;
+    transform: translateY(-3px);
 }
 
-.archive-item:hover .error {
-    opacity: 0;
-}
-
-.archive-item:hover img {
-    animation: glitch 0.35s steps(2) alternate;
-}
-
-@keyframes glitch {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    20% {
-        transform: translate(-2px, 1px) scale(1);
-    }
-
-    40% {
-        transform: translate(2px, -1px) scale(1);
-    }
-
-    60% {
-        transform: translate(-1px, 2px) scale(1);
-    }
-
-    80% {
-        transform: translate(1px, -2px) scale(1);
-    }
-
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
+.fake-link:hover::after {
+    content: "↺";
+    position: absolute;
+    right: 10px;
+    opacity: 0.7;
 }
 
 .credit {
@@ -272,10 +205,21 @@ main {
 
 @media (max-width:780px) {
 
+    .link-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        grid-auto-rows: 85px;
+    }
+
+    .fake-link {
+        font-size: 0.9rem;
+        border-radius: 16px;
+    }
+
     .close-menu {
         display: block;
         position: absolute;
-        top: 40px;
+        top: 20px;
         right: 20px;
         font-size: 2em;
         color: grey;
@@ -283,20 +227,12 @@ main {
 
     button {
         border: width 0px;
+        background-color: white;
     }
 
     .hamburger-menu {
         display: flex;
-        top: 16px;
-        right: 16px;
-        z-index: 2000;
-        background: none;
-        border: none;
-    }
-
-    .archive-item .error {
-        display: flex;
-        font-size: 5px;
+        grid-column: auto;
     }
 
     .menu-deployed {
@@ -332,18 +268,11 @@ main {
     }
 
     .menu1 a {
-        padding: 20px;
         color: gray;
     }
 
     .menu1 a:hover {
         color: rgb(229, 227, 227);
-    }
-
-    nav {
-        margin: 0 auto;
-        margin-bottom: 50px;
-        width: 100%;
     }
 
     .wrapper {
@@ -356,4 +285,5 @@ main {
         margin-top: 40px;
         font-size: 12px;
     }
+
 }
