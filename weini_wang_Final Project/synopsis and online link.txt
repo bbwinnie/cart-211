@@ -27,3 +27,9 @@ Page 8 (Silence) — Represents the quiet between clicks — the moment when not
 Page 9 (Reclaim) — Encourages reclaiming creativity and autonomy from the digital system. A full-screen handwritten manifesto reads, “We can still make our own noise.” Small tips appear on-screen, encouraging viewers to resist social media’s influence.
 
 Page 10 (Loopback) — Illustrates how every path online eventually leads back to the same source. All links redirect users back to the homepage.
+
+online link: 
+
+https://bbwinnie.github.io/cart-211/weini_wang_Final%20Project/weini_wang_Final%20Project/
+
+https://github.com/bbwinnie/cart-211/tree/bc0a3dacdab4321187573c16c0bbbc6d50474ad7/weini_wang_Final%20Project
