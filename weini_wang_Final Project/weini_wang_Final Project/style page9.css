@@ -1,0 +1,466 @@
+body {
+    font-family: "Roboto Flex", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "wdth" 100,
+        "GRAD" 0,
+        "XOPQ" 96,
+        "XTRA" 468,
+        "YOPQ" 79,
+        "YTAS" 750,
+        "YTDE" -203,
+        "YTFI" 738,
+        "YTLC" 514,
+        "YTUC" 712;
+    /* no scroll ball */
+    background: radial-gradient(circle at top, #151522 0, #050507 60%, #000 100%);
+    color: var(--ink);
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 10px auto 0;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: rgb(24, 24, 24);
+    /* to change the font type in a */
+}
+
+.menu1 a {
+    display: block;
+    font-size: 20px;
+    color: gray;
+}
+
+.hamburger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.hamburger-menu .open-menu {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.hamburger-menu .fa-bars {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: white;
+}
+
+.menu-deployed {
+    display: flex !important;
+    /* put improtant for the browser. testing...*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /* view height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 11000;
+    padding-top: 50px;
+}
+
+.menu1 {
+    display: none;
+    /* you don't display */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: "Syne Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.menu1 a:hover {
+    color: rgb(136, 34, 34);
+
+}
+
+.menu1 .sub-links {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+
+}
+
+.menu1 .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu1 .has-sub:hover .sub-links {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu1 .sub-links a {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.menu1 .sub-links a:hover {
+    color: rgb(136, 34, 34);
+}
+
+.close-menu {
+    position: absolute !important;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    color: grey;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.close-menu {
+    display: block;
+}
+
+:root {
+    --bg: #050507;
+    --ink: #f6f3ea;
+    --accent: #ff6f61;
+    --muted: #8b8b8b;
+    --stroke: rgba(246, 243, 234, 0.12);
+}
+
+.reclaim-page {
+    position: relative;
+    padding: 4vh 7vw 10vh;
+}
+
+/* Noise / grain overlay */
+.grain {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+}
+
+/* Manifesto header */
+.manifesto {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+
+.manifesto-tag {
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+}
+
+.manifesto-tag::before,
+.manifesto-tag::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(to right, transparent, var(--stroke));
+}
+
+.manifesto-tag::before {
+    max-width: 2rem;
+}
+
+.manifesto h1 {
+    font-size: clamp(2.8rem, 7vw, 4.5rem);
+    line-height: 1.03;
+    margin-bottom: 1.3rem;
+    font-family: "Roboto Flex", sans-serif;
+}
+
+.manifesto h1 span {
+    background: linear-gradient(95deg, #ffb36d, #ff6f61, #ffe07b);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+}
+
+.manifesto-note {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.manifesto-note strong {
+    color: var(--ink);
+    font-weight: 500;
+}
+
+.margin-scribble {
+    position: absolute;
+    right: 2vw;
+    top: 10vh;
+    font-family: "Permanent Marker", cursive;
+    font-size: 0.95rem;
+    color: rgba(246, 243, 234, 0.35);
+    transform: rotate(6deg);
+    max-width: 10rem;
+    text-align: right;
+}
+
+.infinite-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+}
+
+.tip-block {
+    border: 1px solid var(--stroke);
+    border-radius: 1.2rem;
+    padding: 1.6rem 1.5rem 1.3rem;
+    position: relative;
+    backdrop-filter: blur(10px);
+    background: radial-gradient(circle at top left, rgba(255, 111, 97, 0.08), rgba(0, 0, 0, 0.7));
+    overflow: hidden;
+}
+
+.tip-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.7rem;
+}
+
+.tip-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.tip-text strong {
+    color: var(--accent);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+.tip-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 1.4rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+.tip-meta span {
+    opacity: 0.8;
+}
+
+.tip-meta span.tip-time {
+    font-family: "Space Grotesk", monospace;
+}
+
+.tip-meta span.tip-status {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+}
+
+.tip-progress {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 0.7rem;
+    height: 2px;
+    width: 90%;
+    background: linear-gradient(90deg, rgba(255, 111, 97, 0.3), rgba(255, 224, 123, 0.05));
+}
+
+/* Bottom message that never quite arrives */
+.no-end {
+    margin-top: 3rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    opacity: 0.8;
+}
+
+.no-end::after {
+    content: "…";
+    font-size: 1.2rem;
+    animation: ellipsis 1.4s infinite steps(3, end);
+}
+
+.infinite-column+.infinite-column {
+    margin-top: 3rem;
+    /* adjust the gap size as you like */
+}
+
+@keyframes ellipsis {
+    0% {
+        content: ".";
+    }
+
+    33% {
+        content: "..";
+    }
+
+    66% {
+        content: "...";
+    }
+}
+
+.credit {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 200;
+    color: white;
+    font-family: "Syne Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media (max-width:780px) {
+
+    .reclaim-page {
+        padding: 3vh 5vw 8vh;
+    }
+
+    .margin-scribble {
+        display: none;
+    }
+
+    .tip-block {
+        padding: 1.3rem 1.1rem 1.1rem;
+    }
+
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2em;
+        color: grey;
+    }
+
+    button {
+        border: width 0px;
+        background-color: white;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        top: 16px;
+        right: 16px;
+        z-index: 2000;
+        background: none;
+        border: none;
+    }
+
+    .menu-deployed {
+        display: flex !important;
+        /* put improtant for the browser. testing...*/
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        /* view height */
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: white;
+        z-index: 11000;
+        padding-top: 50px;
+    }
+
+    .menu1 {
+        display: none;
+        /* you don't display */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .menu1 a {
+        color: gray;
+    }
+
+    .menu1 a:hover {
+        color: rgb(229, 227, 227);
+    }
+
+    .wrapper {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    footer {
+        margin-top: 40px;
+        font-size: 12px;
+    }
+
+}

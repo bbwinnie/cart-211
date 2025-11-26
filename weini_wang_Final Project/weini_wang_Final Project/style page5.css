@@ -1,0 +1,497 @@
+body {
+    font-family: "Roboto Flex", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "wdth" 100,
+        "GRAD" 0,
+        "XOPQ" 96,
+        "XTRA" 468,
+        "YOPQ" 79,
+        "YTAS" 750,
+        "YTDE" -203,
+        "YTFI" 738,
+        "YTLC" 514,
+        "YTUC" 712;
+    overflow: hidden;
+    background: radial-gradient(circle at top, #1f1f23 0, #050507 55%, #000000 100%);
+    color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 10px auto 0;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: rgb(24, 24, 24);
+    /* to change the font type in a */
+}
+
+.menu1 a {
+    display: block;
+    font-size: 20px;
+    color: gray;
+}
+
+
+.hamburger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.hamburger-menu .open-menu {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.hamburger-menu .fa-bars {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: white;
+}
+
+.menu-deployed {
+    display: flex !important;
+    /* put improtant for the browser. testing...*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /* view height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 11000;
+    padding-top: 50px;
+}
+
+.menu1 {
+    display: none;
+    /* you don't display */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: "Syne Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.menu1 a:hover {
+    color: rgb(136, 34, 34);
+
+}
+
+.menu1 .sub-links {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+
+}
+
+.menu1 .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu1 .has-sub:hover .sub-links {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu1 .sub-links a {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.menu1 .sub-links a:hover {
+    color: rgb(136, 34, 34);
+}
+
+.close-menu {
+    position: absolute !important;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    color: grey;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.close-menu {
+    display: block;
+}
+
+.whispers {
+    margin-top: 100px;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.15;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 120;
+    padding: 40px;
+    gap: 20px;
+    z-index: 1;
+}
+
+.whispers span {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 8px;
+    white-space: nowrap;
+    animation: drift 12s linear infinite;
+}
+
+.whispers span:nth-child(odd) {
+    animation-duration: 18s;
+}
+
+.whispers span:nth-child(3n) {
+    animation-duration: 22s;
+}
+
+@keyframes drift {
+    0% {
+        transform: translateX(-10%);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateX(10%);
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: translateX(-10%);
+        opacity: 0.3;
+    }
+}
+
+.cookie-modal {
+    position: relative;
+    z-index: 2;
+    width: min(460px, 92vw);
+    background: rgba(10, 10, 14, 0.96);
+    border-radius: 24px;
+    padding: 28px 26px 22px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+    opacity: 1;
+    transform: scale(1);
+    transition:
+        opacity 0.35s ease-out,
+        transform 0.35s ease-out;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cookie-modal.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+}
+
+.cookie-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.cookie-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffd27b, #c07a2a);
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: 0 0 18px rgba(255, 210, 123, 0.6);
+}
+
+.cookie-icon::before,
+.cookie-icon::after {
+    content: "";
+    position: absolute;
+    background: rgba(90, 49, 10, 0.8);
+    border-radius: 50%;
+}
+
+.cookie-icon::before {
+    width: 7px;
+    height: 7px;
+    top: 6px;
+    left: 8px;
+}
+
+.cookie-icon::after {
+    width: 5px;
+    height: 5px;
+    bottom: 7px;
+    right: 8px;
+}
+
+.cookie-title {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.cookie-body {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 18px;
+}
+
+.cookie-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.option-pill {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.cookie-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.cookie-modal button {
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.08s ease-out,
+        box-shadow 0.08s ease-out,
+        background 0.18s ease-out,
+        color 0.18s ease-out;
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.cookie-modal button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.2), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    pointer-events: none;
+}
+
+.cookie-modal button:hover:before {
+    opacity: 1;
+}
+
+.cookie-modal button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+}
+
+.cookie-modal button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+.cookie-modal .btn-primary {
+    background: linear-gradient(135deg, #ffd27b, #ff9f4a);
+    color: #2a1200;
+    font-weight: 700;
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.9),
+        0 0 30px rgba(255, 159, 74, 0.7);
+    border-color: rgba(255, 240, 205, 0.6);
+}
+
+.btn-primary:before {
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.5), transparent 60%);
+}
+
+.cookie-btn:active::after {
+    content: " Saving your preferences…";
+    font-size: 9px;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: 4px;
+    opacity: 0.9;
+}
+
+.credit {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 200;
+    color: white;
+    font-family: "Syne Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media (max-width:780px) {
+
+    .cookie-modal {
+        width: 80vw;
+        max-width: 340px;
+        padding: 22px 18px 18px;
+        border-radius: 20px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .cookie-actions {
+        justify-content: flex-start;
+    }
+
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2em;
+        color: grey;
+    }
+
+    button {
+        border: width 0px;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        grid-column: auto;
+    }
+
+    .menu-deployed {
+        display: flex !important;
+        /* put improtant for the browser. testing...*/
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        /* view height */
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: white;
+        z-index: 11000;
+        padding-top: 50px;
+    }
+
+    .menu1 {
+        display: none;
+        /* you don't display */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .menu1 a {
+        color: gray;
+    }
+
+    .menu1 a:hover {
+        color: rgb(229, 227, 227);
+    }
+
+    .wrapper {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    footer {
+        margin-top: 40px;
+        font-size: 12px;
+    }
+
+}

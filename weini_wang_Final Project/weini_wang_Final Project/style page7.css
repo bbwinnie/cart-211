@@ -1,0 +1,359 @@
+body {
+    font-family: "Roboto Flex", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "wdth" 100,
+        "GRAD" 0,
+        "XOPQ" 96,
+        "XTRA" 468,
+        "YOPQ" 79,
+        "YTAS" 750,
+        "YTDE" -203,
+        "YTFI" 738,
+        "YTLC" 514,
+        "YTUC" 712;
+    overflow: hidden;
+    min-height: 100vh;
+    background: #050509;
+    color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 10px auto 0;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: rgb(24, 24, 24);
+    /* to change the font type in a */
+}
+
+.menu1 a {
+    display: block;
+    font-size: 20px;
+    color: gray;
+}
+
+.hamburger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.hamburger-menu .open-menu {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.hamburger-menu .fa-bars {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: white;
+}
+
+.menu-deployed {
+    display: flex !important;
+    /* put improtant for the browser. testing...*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /* view height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 11000;
+    padding-top: 50px;
+}
+
+.menu1 {
+    display: none;
+    /* you don't display */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: "Syne Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.menu1 a:hover {
+    color: rgb(136, 34, 34);
+
+}
+
+.menu1 .sub-links {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+
+}
+
+.menu1 .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu1 .has-sub:hover .sub-links {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu1 .sub-links a {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.menu1 .sub-links a:hover {
+    color: rgb(136, 34, 34);
+}
+
+.close-menu {
+    position: absolute !important;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    color: grey;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.close-menu {
+    display: block;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.archive-grid {
+    width: 90vw;
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.archive-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+}
+
+.archive-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity .35s ease, transform .35s ease;
+    transform: scale(1.1);
+    filter: grayscale(100%) contrast(130%) saturate(0%);
+}
+
+.archive-item .error {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: .9rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.85);
+    transition: opacity .3s ease;
+    opacity: 1;
+}
+
+.archive-item:hover img {
+    opacity: 1;
+    transform: scale(1);
+    filter: none;
+}
+
+.archive-item:hover .error {
+    opacity: 0;
+}
+
+.archive-item:hover img {
+    animation: glitch 0.35s steps(2) alternate;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    20% {
+        transform: translate(-2px, 1px) scale(1);
+    }
+
+    40% {
+        transform: translate(2px, -1px) scale(1);
+    }
+
+    60% {
+        transform: translate(-1px, 2px) scale(1);
+    }
+
+    80% {
+        transform: translate(1px, -2px) scale(1);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+.credit {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 200;
+    color: white;
+    font-family: "Syne Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media (max-width:780px) {
+
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 40px;
+        right: 20px;
+        font-size: 2em;
+        color: grey;
+    }
+
+    button {
+        border: width 0px;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        top: 16px;
+        right: 16px;
+        z-index: 2000;
+        background: none;
+        border: none;
+    }
+
+    .archive-item .error {
+        display: flex;
+        font-size: 5px;
+    }
+
+    .menu-deployed {
+        display: flex !important;
+        /* put improtant for the browser. testing...*/
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        /* view height */
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: white;
+        z-index: 11000;
+        padding-top: 50px;
+    }
+
+    .menu1 {
+        display: none;
+        /* you don't display */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .menu1 a {
+        padding: 20px;
+        color: gray;
+    }
+
+    .menu1 a:hover {
+        color: rgb(229, 227, 227);
+    }
+
+    nav {
+        margin: 0 auto;
+        margin-bottom: 50px;
+        width: 100%;
+    }
+
+    .wrapper {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    footer {
+        margin-top: 40px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Echoes in the feed</title>
+    <meta name="description" content="Explore how social media and algorithms make everything look the same. ">
+    <meta property="og:title" content="Echoes in the feed">
+    <meta name="author" content="weini wang">
+    <meta name="copyright" content="© weini wang, cart 211 final project, fall 2025,">
+    <link rel="stylesheet" href="style page9.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0d8336c3af.js" crossorigin="anonymous"></script>
+    <!-- fontawesome link: easy to get icon -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+80s+Fade&family=Syne+Mono&display=swap"
+        rel="stylesheet">
+    <!-- copy font from googlefont -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- div is the box. the name of that divation -->
+        <nav>
+            <div class="menu1">
+                <button class="close-menu">&times;</button>
+                <a href="index.html">The Noise</a>
+                <div class="menu-item has-sub">
+                    <a href="Trace.html" class="main-link">Trace</a>
+                    <div class="sub-links">
+                        <a href="Surplus.html">Surplus</a>
+                        <a href="Mirror.html">Mirror</a>
+                    </div>
+                </div>
+                <a href="Consent.html">Consent</a>
+                <a href="Warning.html">Warning</a>
+                <div class="menu-item has-sub">
+                    <a href="Archive.html" class="main-link">Archive</a>
+                    <div class="sub-links">
+                        <a href="Silence.html">Silence</a>
+                    </div>
+                </div>
+                <a href="Reclaim.html">Reclaim</a>
+                <a href="LoopBack.html">Loop Back</a>
+                <!-- everthing inside the <>is always win the style.css -->
+            </div>
+
+            <div class="hamburger-menu">
+                <button class="open-menu">
+                    <span class="fa fa-bars"></span>
+                </button>
+            </div>
+        </nav>
+
+        <main>
+            <div class="grain"></div>
+
+            <main class="reclaim-page">
+                <header class="manifesto">
+                    <div class="manifesto-tag"></div>
+                    <h1>
+                        We can still make our <span> own noise.</span>
+                    </h1>
+                    <p class="manifesto-note">
+                        This page refuses to end — just like the feeds that never stop. The difference: every scroll
+                        here is a small act of refusal. You are not the product. You are the
+                        one making the signal.<br><br>
+                    </p>
+                </header>
+
+                <div class="infinite-column" id="infinite-column">
+                    <article class="tip-block">
+                        <div class="tip-label">small reclaim</div>
+                        <p class="tip-text">
+                            Turn off <strong>all notifications</strong> for one evening. If something truly matters,
+                            it will still be there when you come back — you decide when “back” is.
+                        </p>
+                        <div class="tip-meta">
+                            <span class="tip-status">status: pending rebellion</span>
+                        </div>
+                        <div class="tip-progress"></div>
+                    </article>
+
+                    <article class="tip-block">
+                        <div class="tip-label">small reclaim</div>
+                        <p class="tip-text">
+                            Before you scroll, <strong>make one thing</strong>: a doodle, a sentence, a voice memo,
+                            a melody. Add your own noise before you let the feed speak.
+                        </p>
+                        <div class="tip-meta">
+                            <span class="tip-status">status: quietly active</span>
+                        </div>
+                        <div class="tip-progress"></div>
+                    </article>
+
+                    <article class="tip-block">
+                        <div class="tip-label">small reclaim</div>
+                        <p class="tip-text">
+                            Mute the account that makes you feel small. <strong>Unfollow the voice</strong> that
+                            sells you a life you never asked for.
+                        </p>
+                        <div class="tip-meta">
+                            <span class="tip-status">status: noise filtered</span>
+                        </div>
+                        <div class="tip-progress"></div>
+                    </article>
+
+                    <article class="tip-block">
+                        <div class="tip-label">small reclaim</div>
+                        <p class="tip-text">
+                            Scroll to the end of your camera roll instead of your feed. Remember that
+                            <strong>your own archive</strong> is louder than a stranger’s highlight reel.
+                        </p>
+                        <div class="tip-meta">
+                            <span class="tip-status">status: memory restored</span>
+                        </div>
+                        <div class="tip-progress"></div>
+                    </article>
+                </div>
+
+                <p class="no-end">
+                    You will not reach the end of this page
+                </p>
+                </section>
+            </main>
+
+            <footer>
+                <div class="credit">
+                    <small><em>© weini wang, cart 211, fall 2025, Final project </em></small>
+                </div>
+            </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.querySelector('.hamburger-menu button');
+            const closeButton = document.querySelector('.close-menu');
+            const menu1 = document.querySelector('.menu1');
+
+            //gestion de l'ouverture de menu
+            hamburgerButton.addEventListener('click', () => {
+                menu1.classList.add('menu-deployed');
+            });
+
+            //gestion de la fermeture du menu
+            closeButton.addEventListener('click', () => {
+                menu1.classList.remove('menu-deployed');
+            });
+        });
+
+        const infiniteColumn = document.getElementById("infinite-column");
+        const reclaimPage = document.querySelector(".reclaim-page");
+
+        window.addEventListener("scroll", () => {
+            const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+            if (scrollTop + clientHeight > scrollHeight - 1200) {
+                const clone = infiniteColumn.cloneNode(true);
+                reclaimPage.appendChild(clone);
+            }
+        });
+    </script>
+</body>
+
+</html>

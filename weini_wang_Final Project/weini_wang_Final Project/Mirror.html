@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Echoes in the feed</title>
+    <meta name="description" content="Explore how social media and algorithms make everything look the same. ">
+    <meta property="og:title" content="Echoes in the feed">
+    <meta name="author" content="weini wang">
+    <meta name="copyright" content="© weini wang, cart 211 final project, fall 2025,">
+    <link rel="stylesheet" href="style page4.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0d8336c3af.js" crossorigin="anonymous"></script>
+    <!-- fontawesome link: easy to get icon -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+80s+Fade&family=Syne+Mono&display=swap"
+        rel="stylesheet">
+    <!-- copy font from googlefont -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- div is the box. the name of that divation -->
+        <nav>
+            <div class="menu1">
+                <button class="close-menu">&times;</button>
+
+                <a href="index.html">The Noise</a>
+
+                <div class="menu-item has-sub">
+                    <a href="Trace.html" class="main-link">Trace</a>
+
+                    <div class="sub-links">
+                        <a href="Surplus.html">Surplus</a>
+                        <a href="Mirror.html">Mirror</a>
+                    </div>
+                </div>
+                <a href="Consent.html">Consent</a>
+                <a href="Warning.html">Warning</a>
+                <div class="menu-item has-sub">
+                    <a href="Archive.html" class="main-link">Archive</a>
+
+                    <div class="sub-links">
+                        <a href="Silence.html">Silence</a>
+                    </div>
+                </div>
+                <a href="Reclaim.html">Reclaim</a>
+                <a href="LoopBack.html">Loop Back</a>
+                <!-- everthing inside the <>is always win the style.css -->
+            </div>
+
+            <div class="hamburger-menu">
+                <button class="open-menu">
+                    <span class="fa fa-bars"></span>
+                </button>
+            </div>
+        </nav>
+
+        <main>
+
+            <!-- 中间用户档案卡片 -->
+            <div class="profile-card">
+                <div class="profile-header">
+                    <!-- Avatar：首字母会跟随机名字变化 -->
+                    <div class="avatar" id="avatar-initial">A</div>
+                    <div class="profile-name" id="profile-name">Alex Johnson</div>
+                    <div class="profile-tagline">“This is the version the system thinks you are.”</div>
+                </div>
+
+                <table class="profile-table">
+                    <tr>
+                        <th>Name</th>
+                        <td id="field-name">Alex Johnson</td>
+                    </tr>
+                    <tr>
+                        <th>Location</th>
+                        <td id="field-location">Montreal, Canada</td>
+                    </tr>
+                    <tr>
+                        <th>Age</th>
+                        <td id="field-age">27</td>
+                    </tr>
+                    <tr>
+                        <th>Likes</th>
+                        <td id="field-likes">Glitch art, ramen, late-night scrolling, cozy games</td>
+                    </tr>
+                    <tr>
+                        <th>Data Trail</th>
+                        <td id="field-data">
+                            Search history, video watch-time, scroll speed, “personalized” ads
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="profile-footer">
+                    auto-generated shadow record
+                </div>
+            </div>
+
+        </main>
+
+
+        <footer>
+            <div class="credit">
+                <small><em>© weini wang, cart 211, fall 2025, Final project </em></small>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.querySelector('.hamburger-menu button');
+            const closeButton = document.querySelector('.close-menu');
+            const menu1 = document.querySelector('.menu1');
+
+            //gestion de l'ouverture de menu
+            hamburgerButton.addEventListener('click', () => {
+                menu1.classList.add('menu-deployed');
+            });
+
+            //gestion de la fermeture du menu
+            closeButton.addEventListener('click', () => {
+                menu1.classList.remove('menu-deployed');
+            });
+
+            const profiles = [
+                {
+                    name: "Alex Johnson",
+                    location: "Montreal, Canada",
+                    age: "27",
+                    likes: "Glitch art, ramen at 2 a.m., cozy indie games",
+                    data: "Search history, video watch-time, scroll speed, “personalized” ads"
+                },
+                {
+                    name: "Mira Chen",
+                    location: "Toronto, Canada",
+                    age: "24",
+                    likes: "Lo-fi playlists, endless scrolling, pastel photo filters",
+                    data: "Muted stories, saved posts, half-read threads, abandoned carts"
+                },
+                {
+                    name: "Jordan Lee",
+                    location: "New York, USA",
+                    age: "29",
+                    likes: "Productivity hacks, latte art, ‘study with me’ livestreams",
+                    data: "Focus-time stats, notification opens, skipped ads, rewinds"
+                },
+                {
+                    name: "Sam Rivera",
+                    location: "Mexico City, Mexico",
+                    age: "22",
+                    likes: "Street food reels, meme chains, late-night Discord calls",
+                    data: "Message frequency, emoji choices, typing pauses, rage clicks"
+                },
+                {
+                    name: "Taylor Kim",
+                    location: "Seoul, South Korea",
+                    age: "26",
+                    likes: "K-pop fancams, skin-care routines, aesthetic desk setups",
+                    data: "Looped clips, double-taps, replayed songs, paused frames"
+                }
+            ];
+
+            // 👉 想改内容：直接改上面的 profiles 数组即可
+
+            function getRandomProfile(lastProfile) {
+                if (profiles.length === 0) return null;
+                if (profiles.length === 1) return profiles[0];
+
+                let profile;
+                do {
+                    const index = Math.floor(Math.random() * profiles.length);
+                    profile = profiles[index];
+                } while (profile === lastProfile);
+
+                return profile;
+            }
+
+            /* ========= 2. 通用打字机函数 ========= */
+
+            function typeText(element, text, speed, doneCallback) {
+                element.textContent = "";
+                element.classList.add("typing");
+
+                let i = 0;
+
+                function step() {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(step, speed);
+                    } else {
+                        element.classList.remove("typing");
+                        if (typeof doneCallback === "function") {
+                            doneCallback();
+                        }
+                    }
+                }
+
+                step();
+            }
+
+            /* ========= 3. 打一整份档案（5 行依次打） ========= */
+
+            function typeProfile(profile, onDone) {
+                const avatarInitial = document.getElementById("avatar-initial");
+                const profileName = document.getElementById("profile-name");
+
+                const fieldName = document.getElementById("field-name");
+                const fieldLocation = document.getElementById("field-location");
+                const fieldAge = document.getElementById("field-age");
+                const fieldLikes = document.getElementById("field-likes");
+                const fieldData = document.getElementById("field-data");
+
+                // 先清空字段
+                fieldName.textContent = "";
+                fieldLocation.textContent = "";
+                fieldAge.textContent = "";
+                fieldLikes.textContent = "";
+                fieldData.textContent = "";
+
+                // 更新头像首字母和标题（不打字，直接切）
+                if (profile.name && profile.name.length > 0) {
+                    avatarInitial.textContent = profile.name.charAt(0).toUpperCase();
+                }
+                profileName.textContent = profile.name;
+
+                // 打字参数
+                const speed = 35;  // 每个字符间隔（毫秒）
+                const gap = 300;   // 每一行结束和下一行开始之间的停顿（毫秒）
+
+                typeText(fieldName, profile.name, speed, () => {
+                    setTimeout(() => {
+                        typeText(fieldLocation, profile.location, speed, () => {
+                            setTimeout(() => {
+                                typeText(fieldAge, profile.age, speed, () => {
+                                    setTimeout(() => {
+                                        typeText(fieldLikes, profile.likes, speed, () => {
+                                            setTimeout(() => {
+                                                typeText(fieldData, profile.data, speed, () => {
+                                                    // 所有字段打完
+                                                    if (typeof onDone === "function") {
+                                                        onDone();
+                                                    }
+                                                });
+                                            }, gap);
+                                        });
+                                    }, gap);
+                                });
+                            }, gap);
+                        });
+                    }, gap);
+                });
+            }
+
+            /* ========= 4. 循环动画：不断随机切换档案并重新打字 ========= */
+
+            function startProfileLoop() {
+                let lastProfile = null;
+
+                function nextRound() {
+                    const profile = getRandomProfile(lastProfile);
+                    if (!profile) return;
+                    lastProfile = profile;
+
+                    typeProfile(profile, () => {
+                        // 打完一整份档案后，停留一段时间再换下一份
+                        const stayTime = 1500; // 展示停留时间（毫秒）
+                        setTimeout(nextRound, stayTime);
+                    });
+                }
+
+                nextRound();
+            }
+
+            // 启动循环动画
+            startProfileLoop();
+        });
+    </script>
+</body>
+
+</html>

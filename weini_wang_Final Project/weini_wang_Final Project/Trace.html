@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Echoes in the feed</title>
+    <meta name="description" content="Explore how social media and algorithms make everything look the same. ">
+    <meta property="og:title" content="Echoes in the feed">
+    <meta name="author" content="weini wang">
+    <meta name="copyright" content="© weini wang, cart 211 final project, fall 2025,">
+    <link rel="stylesheet" href="style page2.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0d8336c3af.js" crossorigin="anonymous"></script>
+    <!-- fontawesome link: easy to get icon -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Syne+Mono&display=swap"
+        rel="stylesheet">
+    <!-- copy font from googlefont -->
+</head>
+
+<body class="trace-page">
+    <div class="wrapper">
+        <!-- div is the box. the name of that divation -->
+        <nav>
+            <div class="menu1">
+                <button class="close-menu">&times;</button>
+
+                <a href="index.html">The Noise</a>
+
+                <div class="menu-item has-sub">
+                    <a href="Trace.html" class="main-link">Trace</a>
+
+                    <div class="sub-links">
+                        <a href="Surplus.html">Surplus</a>
+                        <a href="Mirror.html">Mirror</a>
+                    </div>
+                </div>
+                <a href="Consent.html">Consent</a>
+                <a href="Warning.html">Warning</a>
+                <div class="menu-item has-sub">
+                    <a href="Archive.html" class="main-link">Archive</a>
+
+                    <div class="sub-links">
+                        <a href="Silence.html">Silence</a>
+                    </div>
+                </div>
+                <a href="Reclaim.html">Reclaim</a>
+                <a href="LoopBack.html">Loop Back</a>
+                <!-- everthing inside the <>is always win the style.css -->
+            </div>
+
+            <div class="hamburger-menu">
+                <button class="open-menu">
+                    <span class="fa fa-bars"></span>
+                </button>
+            </div>
+        </nav>
+
+        <header>
+
+        </header>
+
+        <main>
+            <div class="book">
+                <figure class="im1">
+                    <a href="#"><img src="assets/tiktok.PNG" class="im"></a>
+                    <div class="hover-text">TikTok Chinese</div>
+                </figure>
+
+                <figure class="im2">
+                    <a href="#"><img src="assets/facebook.PNG" class="im"></a>
+                    <div class="hover-text">Facebook</div>
+                </figure>
+
+                <figure class="im3">
+                    <a href="#"><img src="assets/ins.PNG" class="im"></a>
+                    <div class="hover-text">Instagram</div>
+                </figure>
+
+                <figure class="im4">
+                    <a href="#"><img src="assets/linkedin.PNG" class="im"></a>
+                    <div class="hover-text">linkedin</div>
+                </figure>
+
+                <figure class="im5">
+                    <a href="#"><img src="assets/redbook.PNG" class="im"></a>
+                    <div class="hover-text">Red Book</div>
+                </figure>
+
+                <figure class="im6">
+                    <a href="#"><img src="assets/reddit.PNG" class="im"></a>
+                    <div class="hover-text">Reddit</div>
+                </figure>
+
+                <figure class="im7">
+                    <a href="#"><img src="assets/tiktokE.PNG" class="im"></a>
+                    <div class="hover-text">TikTok US</div>
+                </figure>
+
+                <figure class="im8">
+                    <a href="#"><img src="assets/treads.PNG" class="im"></a>
+                    <div class="hover-text">Treads</div>
+                </figure>
+
+                <figure class="im9">
+                    <a href="#"><img src="assets/zhihu.PNG" class="im"></a>
+                    <div class="hover-text">Zhihu</div>
+                </figure>
+            </div>
+        </main>
+
+        <footer>
+            <div class="credit">
+                <small><em>© weini wang, cart 211, fall 2025, Final project </em></small>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.querySelector('.hamburger-menu button');
+            const closeButton = document.querySelector('.close-menu');
+            const menu1 = document.querySelector('.menu1');
+
+            //gestion de l'ouverture de menu
+            hamburgerButton.addEventListener('click', () => {
+                menu1.classList.add('menu-deployed');
+            });
+
+            //gestion de la fermeture du menu
+            closeButton.addEventListener('click', () => {
+                menu1.classList.remove('menu-deployed');
+            });
+        });
+    </script>
+</body>
+
+</html>

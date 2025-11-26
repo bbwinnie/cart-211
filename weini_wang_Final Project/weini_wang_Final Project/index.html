@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Echoes in the feed</title>
+    <meta name="description" content="Explore how social media and algorithms make everything look the same. ">
+    <meta property="og:title" content="Echoes in the feed">
+    <meta name="author" content="weini wang">
+    <meta name="copyright" content="© weini wang, cart 211 final project, fall 2025,">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0d8336c3af.js" crossorigin="anonymous"></script>
+    <!-- fontawesome link: easy to get icon -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+80s+Fade&family=Syne+Mono&display=swap"
+        rel="stylesheet">
+    <!-- copy font from googlefont -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- div is the box. the name of that divation -->
+        <nav>
+            <div class="menu1">
+                <button class="close-menu">&times;</button>
+
+                <a href="index.html">The Noise</a>
+                <div class="menu-item has-sub">
+                    <a href="Trace.html" class="main-link">Trace</a>
+
+                    <div class="sub-links">
+                        <a href="Surplus.html">Surplus</a>
+                        <a href="Mirror.html">Mirror</a>
+                    </div>
+                </div>
+                <a href="Consent.html">Consent</a>
+                <a href="Warning.html">Warning</a>
+                <div class="menu-item has-sub">
+                    <a href="Archive.html" class="main-link">Archive</a>
+
+                    <div class="sub-links">
+                        <a href="Silence.html">Silence</a>
+                    </div>
+                </div>
+                <a href="Reclaim.html">Reclaim</a>
+                <a href="LoopBack.html">Loop Back</a>
+                <!-- everthing inside the <>is always win the style.css -->
+            </div>
+
+            <div class="hamburger-menu">
+                <button class="open-menu">
+                    <span class="fa fa-bars"></span>
+                </button>
+            </div>
+        </nav>
+
+        <header>
+            <h1>Echoes</h1>
+            <h1>In</h1>
+            <h1>The Feed</h1>
+
+            <div class="icon-set">
+                <div class="icon"><i class="fa-solid fa-share"></i></div>
+                <div class="icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="icon"><i class="fa-solid fa-star"></i></div>
+            </div>
+
+            <h1 class="new-message">Welcome to the feed.</h1>
+
+            <div class="icon-record">
+                <i class="fa-solid fa-record-vinyl"></i>
+            </div>
+        </header>
+
+        <footer>
+            <div class="credit">
+                <small><em>© weini wang, cart 211, fall 2025, Final project </em></small>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.querySelector('.hamburger-menu button');
+            const closeButton = document.querySelector('.close-menu');
+            const menu1 = document.querySelector('.menu1');
+
+            //gestion de l'ouverture de menu
+            hamburgerButton.addEventListener('click', () => {
+                menu1.classList.add('menu-deployed');
+            });
+
+            //gestion de la fermeture du menu
+            closeButton.addEventListener('click', () => {
+                menu1.classList.remove('menu-deployed');
+            });
+        });
+
+        window.addEventListener('load', () => {
+
+            const originalSet = document.querySelector('.icon-set');
+
+            const parent = originalSet.parentElement;
+
+            for (let i = 0; i < 4; i++) {
+                const clone = originalSet.cloneNode(true);
+                parent.appendChild(clone);
+            }
+
+            const allIcons = document.querySelectorAll('.icon');
+
+            allIcons.forEach(icon => {
+                const x = Math.random() * 90; // 0~90vw
+                const y = Math.random() * 80; // 0~80vh  
+
+                icon.style.left = x + 'vw';
+                icon.style.top = y + 'vh';
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            const isMenuButton = event.target.closest('.open-menu, .close-menu, .menu1');
+            if (isMenuButton) return;
+
+            document.body.classList.add('dissolved');
+        }, { once: true });
+
+    </script>
+</body>
+
+</html>

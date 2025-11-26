@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Echoes in the feed</title>
+    <meta name="description" content="Explore how social media and algorithms make everything look the same. ">
+    <meta property="og:title" content="Echoes in the feed">
+    <meta name="author" content="weini wang">
+    <meta name="copyright" content="© weini wang, cart 211 final project, fall 2025,">
+    <link rel="stylesheet" href="style page5.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0d8336c3af.js" crossorigin="anonymous"></script>
+    <!-- fontawesome link: easy to get icon -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Syne+Mono&display=swap"
+        rel="stylesheet">
+    <!-- copy font from googlefont -->
+</head>
+
+
+<body class="trace-page">
+    <div class="wrapper">
+        <!-- div is the box. the name of that divation -->
+        <nav>
+            <div class="menu1">
+                <button class="close-menu">&times;</button>
+                <a href="index.html">The Noise</a>
+
+                <div class="menu-item has-sub">
+                    <a href="Trace.html" class="main-link">Trace</a>
+                    <div class="sub-links">
+                        <a href="Surplus.html">Surplus</a>
+                        <a href="Mirror.html">Mirror</a>
+                    </div>
+                </div>
+                <a href="Consent.html">Consent</a>
+                <a href="Warning.html">Warning</a>
+                <div class="menu-item has-sub">
+                    <a href="Archive.html" class="main-link">Archive</a>
+                    <div class="sub-links">
+                        <a href="Silence.html">Silence</a>
+                    </div>
+                </div>
+                <a href="Reclaim.html">Reclaim</a>
+                <a href="LoopBack.html">Loop Back</a>
+                <!-- everthing inside the <>is always win the style.css -->
+            </div>
+
+            <div class="hamburger-menu">
+                <button class="open-menu">
+                    <span class="fa fa-bars"></span>
+                </button>
+            </div>
+        </nav>
+
+        <header>
+
+        </header>
+
+        <main>
+            <div class="whispers">
+                <span>ALLOW? ACCEPT? AGREE?</span>
+                <span>AGREE? ACCEPT? ALLOW?</span>
+                <span>CONSENT? ALLOW? ACCEPT?</span>
+                <span>AGREE? CONSENT? ALLOW?</span>
+                <span>ACCEPT? AGREE? ALLOW?</span>
+                <span>ALLOW? CONSENT? AGREE?</span>
+                <span>ACCEPT? ACCEPT? ACCEPT?</span>
+                <span>AGREE? ALLOW? CONSENT?</span>
+                <span>ALLOW? ACCEPT? AGREE?</span>
+                <span>ACCEPT? AGREE? CONSENT?</span>
+                <span>CONSENT? ACCEPT? ALLOW?</span>
+                <span>AGREE? AGREE? AGREE?</span>
+            </div>
+
+            <div class="cookie-modal" id="cookieModal">
+                <div class="cookie-header">
+                    <div class="cookie-icon"></div>
+                    <div>
+                        <div class="cookie-title">We value your consent</div>
+                    </div>
+                </div>
+
+                <div class="cookie-body">
+                    <p>This site uses cookies and similar technologies to help personalize content,tailor and measure
+                        ads, and provide a better experience.
+                        By clicking accept,you agree to this,as outlined in our Cookie Policy.</p>
+                </div>
+
+                <div class="cookie-options">
+                    <span class="option-pill">Allow?</span>
+                    <span class="option-pill">Accept?</span>
+                    <span class="option-pill">Agree?</span>
+                    <span class="option-pill">Manage options</span>
+                    <span class="option-pill">Reject (recommended)</span>
+                    <span class="option-pill">Accept (recommended)</span>
+                </div>
+
+                <div class="cookie-actions">
+                    <button type="button" class="cookie-btn">Reject</button>
+                    <button type="button" class="btn-primary cookie-btn">Accept all cookies</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="credit">
+                <small><em>© weini wang, cart 211, fall 2025, Final project </em></small>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.querySelector('.hamburger-menu button');
+            const closeButton = document.querySelector('.close-menu');
+            const menu1 = document.querySelector('.menu1');
+
+            //gestion de l'ouverture de menu
+            hamburgerButton.addEventListener('click', () => {
+                menu1.classList.add('menu-deployed');
+            });
+
+            //gestion de la fermeture du menu
+            closeButton.addEventListener('click', () => {
+                menu1.classList.remove('menu-deployed');
+            });
+        });
+
+        const modal = document.getElementById('cookieModal');
+        const buttons = document.querySelectorAll('.cookie-btn');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                modal.classList.add('hidden');
+
+                const delay = 800 + Math.random() * 1200;
+
+                setTimeout(() => {
+                    modal.classList.remove('hidden');
+                }, delay);
+            });
+        });
+    </script>
+</body>
+
+</html>
