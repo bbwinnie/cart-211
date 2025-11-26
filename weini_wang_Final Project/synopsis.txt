@@ -1,0 +1,29 @@
+
+Echoes in the Feed is a 10-page website that shows how social media and algorithms make everything look the same. On most platforms, we see what the system wants us to see — things that are popular, simple, and easy to scroll past.
+
+Today, many companies secretly collect user information to expand their businesses. They study our hidden habits and behaviors through data analysis and use these results to create new commercial software and predictive tools. My project reacts against that system by creating a web experience that feels broken, quiet, and unpredictable.
+
+Each page acts differently when you move or click. Some words fade away, some pictures never fully load, and sometimes the page stays silent. On one of the pages, if the user stops moving or stays still, a warning sign slowly appears — as if the system is demanding activity and attention. This moment questions the idea that even inaction online can be seen as data.
+
+The design aims to bring modern web pages back to their original essence — simple, direct, and effective, like the earliest days of the internet. I want viewers to feel a sense of tension — a quiet warning that even while they explore this site, it might be learning from them. We must stay aware that while the internet brings us convenience, it also learns from us, often in ways we don’t see.
+
+Home Page (The Noise) — Simulates the chaotic, overloaded atmosphere of modern social media. A large title is displayed with social media comment icons. When users hover their mouse over an icon, it begins to blink red.
+
+Page 2 (Trace) — Shows the similarities between different web pages. It features many social media images; when the mouse hovers over them, both the text and images blur.
+
+Page 3 (Surplus) — Represents behavioral surplus — user data traces turned into profit. Mouse movements leave behind glowing dots or trailing letters that never fade completely.
+
+Page 4 (Mirror) — Shows how algorithms construct a digital reflection of the self. A human shadow appears with random text data entries, mimicking your digital twin.
+
+Page 5 (Consent) — Depicts “Accept all cookies” as a ritual of surrender. The page endlessly asks for consent — “Allow?”, “Accept?”, “Agree?” — no matter what the user clicks.
+
+Page 6 (Warning) — Suggests that even stillness online is being measured. If the user stays still for 10 seconds, a red warning appears:
+⚠ WARNING: Inactivity detected.
+
+Page 7 (Archive) — Displays forgotten works and data buried by algorithms. A broken 3×3 image grid reveals glitches or “404 not found” messages when hovered over.
+
+Page 8 (Silence) — Represents the quiet between clicks — the moment when nothing loads. The blank screen flickers slightly; hovering reveals hidden words like “still here.”
+
+Page 9 (Reclaim) — Encourages reclaiming creativity and autonomy from the digital system. A full-screen handwritten manifesto reads, “We can still make our own noise.” Small tips appear on-screen, encouraging viewers to resist social media’s influence.
+
+Page 10 (Loopback) — Illustrates how every path online eventually leads back to the same source. All links redirect users back to the homepage.
