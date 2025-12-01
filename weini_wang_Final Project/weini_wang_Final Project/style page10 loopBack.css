@@ -157,7 +157,7 @@ a {
 }
 
 .link-grid {
-    margin-top: 250px;
+    margin-top: 50px;
     display: grid;
     text-align: center;
     grid-template-columns: repeat(3, 400px);
